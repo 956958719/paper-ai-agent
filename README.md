@@ -51,7 +51,7 @@ ELT过程中，在reader目录下实现了一个从arxiv平台下载论文、解
 
 ## 三、工具调用(Function Calling)
 
-![image-20250627172617337](C:\Users\TinF\AppData\Roaming\Typora\typora-user-images\image-20250627172617337.png)
+![image-20250627172617337](https://img-tinf.oss-cn-guangzhou.aliyuncs.com/image/image-20250627172617337.png)
 
 论文下载
 
