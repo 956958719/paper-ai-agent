@@ -19,6 +19,7 @@ import static org.springframework.ai.vectorstore.pgvector.PgVectorStore.PgIndexT
 @Configuration
 public class PgVectorVectorStoreConfig {
 
+
     @Bean
     public VectorStore pgVectorVectorStore(JdbcTemplate jdbcTemplate, EmbeddingModel dashscopeEmbeddingModel) {
         VectorStore vectorStore = PgVectorStore.builder(jdbcTemplate, dashscopeEmbeddingModel)

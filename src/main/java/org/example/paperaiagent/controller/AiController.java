@@ -37,7 +37,7 @@ public class AiController {
      * @return
      */
     @GetMapping("paper_helper/chat/sync")
-    public String doChatWithLoveAppSync(String message, String chatId) {
+    public String doChatWithAppSync(String message, String chatId) {
         return paperHelper.doChat(message, chatId);
     }
 
@@ -49,7 +49,7 @@ public class AiController {
      * @return
      */
     @GetMapping(value = "paper_helper/chat/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<String> doChatWithLoveAppSSE(String message, String chatId) {
+    public Flux<String> doChatWithAppSSE(String message, String chatId) {
         return paperHelper.doChatByStream(message, chatId);
     }
 
@@ -61,7 +61,7 @@ public class AiController {
      * @return
      */
     @GetMapping(value = "paper_helper/chat/server_sent_event")
-    public Flux<ServerSentEvent<String>> doChatWithLoveAppServerSentEvent(String message, String chatId) {
+    public Flux<ServerSentEvent<String>> doChatWithAppServerSentEvent(String message, String chatId) {
         return paperHelper.doChatByStream(message, chatId)
                 .map(chunk -> ServerSentEvent.<String>builder()
                         .data(chunk)
@@ -77,7 +77,7 @@ public class AiController {
      * @return
      */
     @GetMapping(value = "paper_helper/chat/sse_emitter")
-    public SseEmitter doChatWithLoveAppSseEmitter(String message, String chatId) {
+    public SseEmitter doChatWithAppSseEmitter(String message, String chatId) {
         // 创建一个超时时间较长的 SseEmitter
         SseEmitter sseEmitter = new SseEmitter(180000L); // 3 分钟超时
         // 获取 FLUX 响应式数据并且直接通过订阅链接推送给 SseEmitter

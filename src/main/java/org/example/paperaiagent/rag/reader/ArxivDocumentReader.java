@@ -27,6 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.document.DocumentReader;
+import org.springframework.ai.transformer.KeywordMetadataEnricher;
 import org.springframework.util.Assert;
 
 import java.io.IOException;
@@ -44,7 +45,6 @@ import java.util.Map;
  */
 @Slf4j
 public class ArxivDocumentReader implements DocumentReader {
-
     private final DocumentParser parser;
 
     private final String queryString;
